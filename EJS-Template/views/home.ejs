@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>EJS Template</title>
+</head>
+<body>
+  <h1>Hello, <%= data.name %>!</h1>
+  <h1>Age: <%= data.age %></h1>
+  <br/>
+  <ul>
+    <% data.sub.forEach((item) => { %>
+      <li><%= item %></li>
+    <% }) %>
+  </ul>
+
+  <p>Mere laptop ka battery percentage: <span id="batteryLevel">Loading...</span></p>
+  console.log(false-true);false;
+
+  <script>
+    navigator.getBattery().then(function (battery) {
+      const batteryLevel = battery.level * 100;
+      console.log("Battery level: " + batteryLevel + "%");
+      document.getElementById("batteryLevel").innerText = batteryLevel + "%";
+    });
+  </script>
+</body>
+</html>
